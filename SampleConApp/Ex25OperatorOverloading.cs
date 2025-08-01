@@ -32,8 +32,10 @@ namespace SampleConApp.OperatorOverloading
     //Operator overloading allows to have UR own opertors to be implemented for UR own classes. Usually we overload operators to make the code more readable. 
     internal class Ex25OperatorOverloading
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            var config = ConfigReading.AppConfig;
+            Console.WriteLine(config["AppSettings:AppName"]);
             Employee emp1 = new Employee { EmpId = 101, EmpName = "John", EmpSalary = 50000 };
             emp1 += 5000;
             emp1 -= 2000;
