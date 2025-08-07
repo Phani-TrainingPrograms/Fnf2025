@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FnfTraining" Class="EmpDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=FnfTraining;Integrated Security=True;Encrypt=False" SettingsObjectName="SampleWinConsole.Properties.Settings" SettingsPropertyName="FnfTrainingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DeptTable" Member="DeptTables">
+    <Type Name="DeptTable">
+      <Column Name="DeptId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeptName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="DeptTable_Employee" Member="Employees" ThisKey="DeptId" OtherKey="DeptId" Type="Employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="EmpId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpAddress" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpSalary" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DeptId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DeptTable_Employee" Member="DeptTable" ThisKey="DeptId" OtherKey="DeptId" Type="DeptTable" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
