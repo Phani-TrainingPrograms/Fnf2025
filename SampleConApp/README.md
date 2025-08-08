@@ -2,4 +2,42 @@
 
 This README lists all `.cs` files in this folder and its subfolders:
 
-_No C# files found._
+- `CollectionsAssignment.cs`
+- `Ex01ConsoleIODemo.cs`
+- `Ex02DataTypes.cs`
+- `Ex03CalcProgram.cs`
+- `Ex04Enums.cs`
+- `Ex05ArraysExample.cs`
+- `Ex06ObjectClass.cs`
+- `Ex07TuplesExample.cs`
+- `Ex08ClassesAndObjects.cs`
+- `Ex09InheritanceDemo.cs`
+- `Ex10MethodOverriding.cs`
+- `Ex11AbstractClasses.cs`
+- `Ex12InterfacesDemo.cs`
+- `Ex13AdvancedInterfaceConcepts.cs`
+- `Ex14ExceptionHandling.cs`
+- `Ex15Constructors.cs`
+- `Ex16ParametersDemo.cs`
+- `Ex17DelegatesAndEvents.cs`
+- `Ex18Collections.cs`
+- `Ex19GenericsDemo.cs`
+- `Ex20CustomCollections.cs`
+- `Ex21FileIOExample.cs`
+- `Ex22SerializationExample.cs`
+- `Ex23NewFeatures.cs`
+- `Ex24MultiThreading.cs`
+- `Ex25OperatorOverloading.cs`
+- `Ex25ReadingConfig.cs`
+- `Ex26GarbageCollection.cs`
+- `Ex27ReflectionExample.cs`
+- `obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs`
+- `obj/Debug/net8.0/SampleConApp.AssemblyInfo.cs`
+- `obj/Debug/net8.0/SampleConApp.GlobalUsings.g.cs`
+- `obj/Release/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs`
+- `obj/Release/net8.0/SampleConApp.AssemblyInfo.cs`
+- `obj/Release/net8.0/SampleConApp.GlobalUsings.g.cs`
+- `obj/Release/net8.0/win-x86/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs`
+- `obj/Release/net8.0/win-x86/SampleConApp.AssemblyInfo.cs`
+- `obj/Release/net8.0/win-x86/SampleConApp.GlobalUsings.g.cs`
+- `Program.cs`
