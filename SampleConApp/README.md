@@ -1,6 +1,6 @@
 # C# Files in This Folder
 
-This README lists all `.cs` files in this folder and its subfolders:
+This README lists all `.cs` files in this folder and its subfolders, excluding `bin`, `obj`, and `output` folders:
 
 - `CollectionsAssignment.cs`
 - `Ex01ConsoleIODemo.cs`
@@ -31,13 +31,4 @@ This README lists all `.cs` files in this folder and its subfolders:
 - `Ex25ReadingConfig.cs`
 - `Ex26GarbageCollection.cs`
 - `Ex27ReflectionExample.cs`
-- `obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs`
-- `obj/Debug/net8.0/SampleConApp.AssemblyInfo.cs`
-- `obj/Debug/net8.0/SampleConApp.GlobalUsings.g.cs`
-- `obj/Release/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs`
-- `obj/Release/net8.0/SampleConApp.AssemblyInfo.cs`
-- `obj/Release/net8.0/SampleConApp.GlobalUsings.g.cs`
-- `obj/Release/net8.0/win-x86/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs`
-- `obj/Release/net8.0/win-x86/SampleConApp.AssemblyInfo.cs`
-- `obj/Release/net8.0/win-x86/SampleConApp.GlobalUsings.g.cs`
 - `Program.cs`
