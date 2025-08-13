@@ -1,0 +1,51 @@
+body{
+    background-color: burlywood;
+    color:brown;
+    padding: 5px;
+    margin: 5px;
+}
+nav{
+ background-color: brown;
+ color: whitesmoke;
+ padding: 10px;
+ margin: 10px;
+ text-align: center;   
+}
+
+a{
+    background-color: yellow;
+    color: red;
+    width: 30px;
+    padding: 5px;
+    margin-left: 20px;
+}
+a:hover{
+    background-color: red;
+    color: yellow;
+}
+div{
+    display: inline-block;
+    width: 45%;
+    border: 2px double lightgreen;
+    vertical-align: top;
+    margin-left: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+h1, h2{
+    text-align: center;
+    text-shadow: 2px 2px 5px white;
+    background-color: blanchedalmond;
+    padding: 14px;
+    margin: 5px;
+}
+input{
+    border: 2px solid violet;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: 10px;
+    padding: 10px;
+}
+button{
+    padding: 10px;
+}

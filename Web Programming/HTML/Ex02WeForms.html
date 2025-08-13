@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Forms 2.0</title>
+    <style>
+        body{
+            background-color: burlywood;
+            color: whitesmoke;
+        }
+        h1, h2, h3{
+            background-color: bisque;
+            color: brown;
+            font-size: x-large;
+            padding: 20px;
+            text-align: center;    
+        }
+        input, select{
+            border-radius: 10px;
+            border: 2px solid yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>Working with Web Forms</h2>
+    <hr />
+    <article>
+        <p>
+            Forms are used to take inputs from the User and process it to a storage location like a Database or a local
+            storage where the inputs are stored in the browser itself. In this case, the data is available to the
+            current machine only.
+        </p>
+        <p>
+            Forms are usually processed in the server(Web Server).If the App is using client side scripting, then the
+            form shall skip some attributes to avoid posting the data to the server.
+        </p>
+        <p>
+            All the inputs expected from the User shall be within the form tag. Tney are are basically controls, also called as HTML Controls.
+        </p>
+        <form id="frmRegistration">
+            <h1>Student Registration Form</h1>
+            <hr>
+            <p>
+                <input id="txtName" type="text" required placeholder=" Student Name"/>
+            </p>
+            <p>
+                <input type="email" id="txtEmail" required placeholder="Email Address"/>
+            </p>
+            <p>
+                Date of birth:
+                <input type="date" required id="dob"/>
+            </p>
+            <p>
+                Qualification:
+                <select id="slQualication">
+                    <option>Under Graduation</option>
+                    <option>Post Graduation</option>
+                    <option>Research Graduation</option>
+                    <option>Pre University</option>
+                    <option>School</option>
+                </select>
+            </p>
+            <p>
+                <datalist id="cityList">
+                    <option>Bangalore</option>
+                    <option>Mysore</option>
+                    <option>Chennai</option>
+                    <option>Mumbai</option>
+                    <option>Pune</option>
+                    <option>Hyderabad</option>
+                    <option>Vizag</option>
+                    <option>Coimabatore</option>
+                    <option>Dharwad</option>
+                </datalist>
+                <input type="text" placeholder="Home Town" list="cityList"/>
+            </p>
+            <p>
+                Gender:
+                <input type="radio" id="gender" name="gender"/>Male
+                <input type="radio" id="gender" name="gender"/>Female
+                <input type="radio" id="gender" name="gender"/>Other
+            </p>
+            <p>
+                Please enter your interests:
+                <input type="checkbox" id="chkInterest">Sports
+                <input type="checkbox" id="chkInterest">Movies
+                <input type="checkbox" id="chkInterest">Theatre
+                <input type="checkbox" id="chkInterest">Travel
+                <input type="checkbox" id="chkInterest">Food
+                <input type="checkbox" id="chkInterest">Adventure
+                <input type="checkbox" id="chkInterest">Art
+            </p>
+            <p>Rate the Application
+                <input id="rating" type="range" min="1" max="10" step="1" value="7"/>
+            </p>
+            <p>
+                <button>Submit</button>
+            </p>
+        </form>
+        <script>
+            document.getElementById("frmRegistration")
+            .addEventListener("submit", function(event){
+                event.preventDefault();//Stops the default behaviour of a Submit form. This stops the form from post/get to the server and the data shall be retained in the form. 
+                onSaveRecord();
+            })
+            function onSaveRecord(){
+                debugger;
+                
+                //get the values entered by the user
+                let name = document.getElementById("txtName").value;
+                let email = document.getElementById("txtEmail").value;
+                alert(`The name entered is ${name} with email Address as ${email}`)
+                //store/display the inputs to the User. 
+            }
+        </script>
+    </article>
+</body>
+</html>

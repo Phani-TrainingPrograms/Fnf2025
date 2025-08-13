@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px dashed blue;
+            width: 40%;
+            padding: 10px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            let div = document.getElementById("divDisplay");
+            if(localStorage.getItem("userInfo") !=null ){
+                div.innerText = localStorage.getItem("userInfo");
+            }else{
+                div.innerText ="No info is saved"
+            }
+            //alert("Test")//builtin JS function to message box.
+            document.getElementById("btnSave").addEventListener("click", function(){
+                let name = document.getElementById('txtName').value;
+                let email = document.getElementById('txtEmail').value;
+                let dob = document.getElementById('txtDate').value;
+                let msg = `Name: ${name}, Email: ${email}, Dob: ${dob}`;
+                localStorage.setItem("userInfo", msg);    
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <h2>User inputs</h2>
+        <p>
+            <input type="text" placeholder="Name please!" id="txtName">
+            <p>  <input type="email" placeholder="Email please!" id="txtEmail">
+                <p>   <input type="date" placeholder="DOB please!" id="txtDate">
+                    <p>   <br/>
+            <button id="btnSave">Save Content</button>
+        </p>
+    </div>
+    <div id="divDisplay">
+
+    </div>
+</body>
+</html>

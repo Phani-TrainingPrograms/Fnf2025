@@ -1,0 +1,1 @@
+const finder = (id) => document.getElementById(id);

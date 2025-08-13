@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./empManager.css"/>
+    <script src="./empManager.js"></script>
+    <script src="./htmlHelper.js"></script>
+    <script>
+        const mgr = new EmployeeRepo();
+        
+
+        function addRecord(){
+            const id = finder("empId").value;
+            const name = finder("empName").value;
+            const addr = finder("empAddress").value;
+            const sal = finder("empSalary").value;
+            const emp = new Employee(id, name, addr, sal);
+            mgr.addEmp(emp);
+            alert("Employee added successfully");
+        }
+        function mapEvents(){
+            let saveBtn = document.querySelector("button");
+            saveBtn.addEventListener("click", () => addRecord())
+
+        }
+        window.addEventListener("load", mapEvents);
+    </script> 
+</head>
+<body>
+    <h1>Employee Management Software</h1>
+    <hr/>
+    <article>
+        <nav>
+            <a href="#">View All</a>
+            <a href="#">Add New</a>
+        </nav>
+        <div>
+            <h2>Table of Employees</h2>
+            <hr>
+            <table></table>
+        </div>
+        <div>
+            <h2>Emp Details</h2>
+            <hr>
+            <p><input type="number" id="empId" placeholder="Employee Id"</p>
+            <p><input type="text" id="empName" placeholder="Employee Name"</p>
+            <p><input type="text" id="empAddress" placeholder="Employee Address"</p>
+            <p><input type="number" id="empSalary" placeholder="Employee Salary"</p>
+            <p>
+                <button>Add Record</button>
+                <button>Update Record</button>
+            </p>
+        </div>
+    </article>
+</body>
+</html>

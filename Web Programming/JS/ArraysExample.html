@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Arrays in JS are like collections in C#. It allows to add, remove, update, copy and perform call kinds of operations on it. 
+        let fruits = ["Apples", "Mangoes", "Oranges"] 
+        console.log("The no of fruits in the basket is " + fruits.length)
+        fruits.push("Bananas")//adds to the bottom of the List.
+        fruits.unshift("Grapes");//adds to the top of the list. 
+        fruits = [...fruits, "Pineapples"];//Spread operator is used to spread the contents and then allow new content to be added.
+        fruits.splice(3, 0, "Guavas");//adds the element at the index 3
+        console.log(fruits)
+        //////////////Iterating the arrays in JS//////////////////////
+        console.log("Iterating using for loop")
+        for(let index = 0; index < fruits.length; index++){
+            console.log(fruits[index])
+        }
+        console.log("Iterating using for..of loop")
+        for(const fruit of fruits) //ES7
+          console.log(fruit)
+
+          for(const key in fruits){//ES7
+            console.log(`Index: ${key}, Value at that index: ${fruits[key]}`)
+          }
+
+          //Every array is an object of a class called Array. We can use the Array class and access functions to perform operations on the array.
+          //foreach takes a callback function which has 2 args: element, index. 
+          //This function shall be called for every element of the array and internally passing the values which can be used to perform operations/read the elements.   
+          fruits.forEach((fruit, key)=>{
+            console.log(`Index: ${key}, Value : ${fruit}`)
+          })
+    </script>
+</body>
+</html>
