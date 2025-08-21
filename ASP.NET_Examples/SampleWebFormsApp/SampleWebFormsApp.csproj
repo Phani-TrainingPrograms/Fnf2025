@@ -74,6 +74,7 @@
     <Content Include="Ex04DatabaseAccess.aspx" />
     <Content Include="Ex05StateManagement.aspx" />
     <Content Include="Ex06RecipiantPage.aspx" />
+    <Content Include="Ex07DisplayProducts.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\apples.jpg" />
     <Content Include="Images\BengalGram.jpg" />
@@ -93,7 +94,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\ProductInfo.cs" />
+    <Compile Include="App_Code\ProductInfo.cs" />
     <Compile Include="EmployeeManagement.aspx.cs">
       <DependentUpon>EmployeeManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,6 +143,13 @@
     </Compile>
     <Compile Include="Ex06RecipiantPage.aspx.designer.cs">
       <DependentUpon>Ex06RecipiantPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ex07DisplayProducts.aspx.cs">
+      <DependentUpon>Ex07DisplayProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ex07DisplayProducts.aspx.designer.cs">
+      <DependentUpon>Ex07DisplayProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
