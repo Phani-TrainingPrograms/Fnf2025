@@ -75,6 +75,8 @@
     <Content Include="Ex05StateManagement.aspx" />
     <Content Include="Ex06RecipiantPage.aspx" />
     <Content Include="Ex07DisplayProducts.aspx" />
+    <Content Include="Ex08DisconnectedModel.aspx" />
+    <Content Include="Ex09EditEmployee.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\apples.jpg" />
     <Content Include="Images\BengalGram.jpg" />
@@ -150,6 +152,20 @@
     </Compile>
     <Compile Include="Ex07DisplayProducts.aspx.designer.cs">
       <DependentUpon>Ex07DisplayProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ex08DisconnectedModel.aspx.cs">
+      <DependentUpon>Ex08DisconnectedModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ex08DisconnectedModel.aspx.designer.cs">
+      <DependentUpon>Ex08DisconnectedModel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ex09EditEmployee.aspx.cs">
+      <DependentUpon>Ex09EditEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ex09EditEmployee.aspx.designer.cs">
+      <DependentUpon>Ex09EditEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
