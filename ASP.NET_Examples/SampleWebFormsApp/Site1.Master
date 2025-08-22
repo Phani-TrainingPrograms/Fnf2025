@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="SampleWebFormsApp.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>FnF Training Website</title>
+    <style>
+        .header{
+            text-align:center;
+            color: lightsalmon;
+            padding:20px;
+            margin:5px;
+        }
+        .menu{
+            text-align:center;
+            background-color:lightskyblue;
+            color: blue;
+            padding:20px;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <h1>Welcome to ASP.NET Training!</h1>
+            <hr />
+            <p>ASP.NET is a RAD Technology for building Web Apps at an industrial Scale. Please visit the links below for more user experience. Happy Coding!!!
+            </p>
+        </div>
+        <div class="menu">
+            
+            <asp:Menu ID="Menu1" runat="server" BorderColor="#FF99FF" BorderStyle="Solid" ForeColor="#6600FF" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Ex01Basics.aspx" Text="First Example" />
+                    <asp:MenuItem NavigateUrl="~/Ex02BasicInputExample.aspx" Text="Basic Inputs"/>
+                    <asp:MenuItem NavigateUrl="~/Ex03CalcProgram.aspx" Text="Calc Program" />
+                    <asp:MenuItem NavigateUrl="~/Ex01Basics.aspx"  Text="Calc Program" />
+                    <asp:MenuItem NavigateUrl="~/Ex01Basics.aspx"  Text="Calc Program" />
+                    <asp:MenuItem NavigateUrl="~/Ex01Basics.aspx"  Text="Calc Program" />
+                    <asp:MenuItem NavigateUrl="~/Ex01Basics.aspx"  Text="Calc Program" />
+                    <asp:MenuItem NavigateUrl="~/Ex01Basics.aspx"  Text="Calc Program" />
+                </Items>
+                <StaticMenuItemStyle BorderColor="#FF9900" BorderStyle="Solid" BorderWidth="5px" HorizontalPadding="5px" ItemSpacing="5px" />
+            </asp:Menu>
+            
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <i>&reg All Rights Reserved</i>
+            <i>Powered by ASP.NET-<%=DateTime.Now.Year %></i>
+        </footer>
+    </form>
+</body>
+</html>

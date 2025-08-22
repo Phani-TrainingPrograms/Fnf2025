@@ -1,18 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ex02BasicInputExample.aspx.cs" Inherits="SampleWebFormsApp.Ex02BasicInputExample" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Ex02BasicInputExample.aspx.cs" Inherits="SampleWebFormsApp.Ex02BasicInputExample" %>
+<asp:Content ContentPlaceHolderID="mainContent" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            color: #0066FF;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
         <div>
             <h1 class="auto-style1" style="background-color: #0066FF">Welcome to ASP.NET Programming....</h1>
             <p style="background-color: #CCFFFF">
@@ -41,6 +29,4 @@
             <asp:Button ID="btnSubmit" runat="server" Height="55px" OnClick="btnSubmit_Click" Text="Submit" Width="189px" />
         </p>
         <asp:Label ID="lblDisplay" runat="server" BorderColor="#FF3300" BorderStyle="Dotted" Height="172px" Width="618px"></asp:Label>
-    </form>
-</body>
-</html>
+</asp:Content>
