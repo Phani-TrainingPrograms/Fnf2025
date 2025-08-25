@@ -1,6 +1,7 @@
-﻿namespace SampleDotnetCoreApp
+namespace SampleDotnetCoreApp
 {
     using SampleDotnetCoreApp.Data;
+    using System.Linq;
     //Dotnet Core is a cross-platform framework for building modern applications. U can develop Console, web, desktop, mobile, gaming, IoT, AI, and ML applications using .NET Core. It is open-source and maintained by Microsoft and the .NET community on GitHub.
     //Dotnet Core supports multiple programming languages, including C#, F#, and Visual Basic. It also provides a rich set of libraries and frameworks for building various types of applications.
     //For database programming we use Entity Framework Core (EF Core) which is an Object-Relational Mapping (ORM) framework that allows developers to work with databases using .NET objects. It supports various database providers, including SQL Server, SQLite, PostgreSQL, and MySQL.
@@ -16,6 +17,81 @@
     internal class Program
     {
         static void Main(string[] args)
+        {
+            //getAllExample();
+            //updateExample();
+            //insertExample();
+            deleteExample();
+        }
+
+        private static void deleteExample()
+        {
+            try
+            {
+                var context = new BookContext();
+                var rec = context.MyBooks.Find(1);
+                if(rec == null)
+                {
+                    Console.WriteLine("No Record found to delete");
+                    return;
+                }
+                context.MyBooks.Remove(rec);
+                context.SaveChanges();
+                Console.WriteLine("Book deleted Successfully");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException?.Message);
+            }
+        }
+
+        private static void updateExample()
+        {
+            try
+            {
+                var context = new BookContext();
+                var rec = context.MyBooks.Find(1);//Find by ID...
+                if(rec != null)
+                {
+                    rec.Title = "The Tempest";
+                    rec.Author = "William Shakespear";
+                    rec.BookPrice = 8;
+                }
+                else
+                {
+                    Console.WriteLine("No Record found to update");
+                    return;
+                }
+                context.SaveChanges();
+                Console.WriteLine("Changes updated successfully");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException?.Message);//Called only if InnerException Exists
+            }
+        }
+
+        private static void getAllExample()
+        {
+            try
+            {
+                var context = new BookContext();
+                var records = context.MyBooks.ToList();
+                foreach(var record in records)
+                {
+                    Console.WriteLine(record.Title.ToUpper());
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException?.Message); 
+            }
+        }
+
+        private static void insertExample()
         {
             try
             {
