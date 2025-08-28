@@ -1,0 +1,19 @@
+﻿@model SampleMvcApp.Models.Employee
+<!--Tells that this View is associated with a Model of the type Employee-->
+<div>
+    <h1>Details of @Model.EmpName</h1>
+    <hr/>
+    <section class="card m-3 col-md-8">
+        <dl class="row m-2">
+            <dt class="col-md-4">Employee ID</dt>
+            <dd class="col-md-8">@Model.EmpId</dd>
+            <dt class="col-md-4">Employee Name</dt>
+            <dd class="col-md-8">@Model.EmpName</dd>
+            <dt class="col-md-4">Email Address</dt>
+            <dd class="col-md-8">@Model.EmpEmail</dd>
+            <dt class="col-md-4">Salary</dt>
+            <dd class="col-md-8">@Model.EmpSalary</dd>
+        </dl>
+    </section>
+</div>
+

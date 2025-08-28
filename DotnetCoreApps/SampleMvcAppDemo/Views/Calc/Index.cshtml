@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    var options = ViewData["Options"] as string[];
+}
+
+<h1>Calc Program</h1>
+<hr />
+<form asp-action="Index">
+    <div>
+        <input required name="firstValue" placeholder="Enter the First Value" />
+        <select name="slOptions" id="slOptions">
+            <option>Select one</option>
+            @foreach(var item in options)
+            {
+                <option>@item</option>
+            }
+        </select>
+        <input name="secondValue" placeholder="Enter the Second Value" />
+        <button type="submit">=</button>
+        <span>The Result: @ViewBag.result </span>
+    </div>
+</form>
+
