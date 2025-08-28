@@ -1,0 +1,28 @@
+﻿@model List<Customer>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<table border="1">
+    <tr>
+        <th>CustomerID</th>
+        <th>CustomerName</th>
+        <th>CustomerAddress</th>
+        <th>CustomerBill</th>
+        <th>Options</th>
+    </tr>
+    @foreach(var cst in Model)
+    {
+        <tr>
+            <td>@cst.CstId</td>
+            <td>@cst.CstName</td>
+            <td>@cst.CstAddress</td>
+            <td>@cst.BillAmount</td>
+            <td>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
