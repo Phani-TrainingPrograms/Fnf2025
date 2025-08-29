@@ -24,8 +24,10 @@ namespace SampleMvcApp.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            var connectionString = Program.Configuration["ConnectionStrings:myCon"];
+
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=FnfTraining;Integrated Security=True;Encrypt=False;Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer(connectionString);
         }
  
     }

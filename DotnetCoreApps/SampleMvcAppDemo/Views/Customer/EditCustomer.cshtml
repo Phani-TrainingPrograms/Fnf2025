@@ -1,0 +1,32 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "EditCustomer";
+}
+
+<h1>Edit Customer Details</h1>
+<div>
+    <form asp-action="EditCustomer" method="post">
+        <input type="hidden" asp-for="CstId" />
+        <div>
+            <label>Customer Name</label>
+            <input class="form-control" asp-for="CstName" />
+        </div>
+        <div>
+            <label>Customer Address</label>
+            <input class="form-control" asp-for="CstAddress" />
+        </div>
+        <div>
+            <label>Bill Amount</label>
+            <input class="form-control" asp-for="BillAmount" />
+        </div>
+        <div>
+            <button class="btn btn-info m-3" type="submit">Update Customer</button>
+        </div>
+        <span>
+            @if(ViewBag.ErrorMessage != null)
+            {
+                <p class="text-danger">@ViewBag.ErrorMessage</p>
+            }
+        </span>
+    </form>
+

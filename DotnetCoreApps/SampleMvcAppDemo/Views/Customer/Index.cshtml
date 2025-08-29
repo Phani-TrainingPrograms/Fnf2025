@@ -4,7 +4,7 @@
 }
 
 <h1>Index</h1>
-<table border="1">
+<table class="table table-bordered table-striped">
     <tr>
         <th>CustomerID</th>
         <th>CustomerName</th>
@@ -20,8 +20,8 @@
             <td>@cst.CstAddress</td>
             <td>@cst.BillAmount</td>
             <td>
-                <a href="#">Edit</a>
-                <a href="#">Delete</a>
+                <a asp-controller="Customer" asp-action="EditCustomer" asp-route-id="@cst.CstId" class="btn btn-primary m-2">Edit</a>
+                <a asp-controller="Customer" asp-action="" class="btn btn-danger m-2">Delete</a>
             </td>
         </tr>
     }
