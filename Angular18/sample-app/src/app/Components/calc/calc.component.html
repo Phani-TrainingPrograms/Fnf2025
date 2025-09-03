@@ -1,0 +1,15 @@
+<section>
+    <h1>Calc Program</h1>
+    <p>
+        <input [value]="fValue" placeholder="Enter First Value"/>
+        <select>
+            <option>Add</option>
+            <option>Subtract</option>
+            <option>Multiply</option>
+            <option>Divide</option>
+        </select>
+        <input [value]="sValue" placeholder="Enter Second Value"/>
+        <button (click)="onProcess()">=</button>
+        <span>{{result}}</span>
+    </p>
+    </section>
