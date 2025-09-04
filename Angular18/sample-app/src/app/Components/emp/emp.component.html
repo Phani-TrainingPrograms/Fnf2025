@@ -1,8 +1,8 @@
 <section>
     <h2>Details of the selected Employee</h2>
     <hr/>
-    <p>Employee Name: {{empName}}</p>
-    <p>Employee Address: {{empAddress}}</p>
-    <p>Employee Salary: {{empSalary}}</p>
+    <p>Employee Name: {{empName | uppercase}}</p>
+    <p>Employee Address: {{empAddress | uppercase}}</p>
+    <p>Employee Salary: {{empSalary | currency : 'INR'}}</p>
     <button (click)="onClick()">Click Here</button>
 </section>

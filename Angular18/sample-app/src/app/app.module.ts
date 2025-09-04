@@ -6,19 +6,25 @@ import { AppComponent } from './app.component';
 import { SecondComponent } from './Components/second/second.component';
 import { EmpComponent } from './Components/emp/emp.component';
 import { CalcComponent } from './Components/calc/calc.component';
+import { FormsModule } from '@angular/forms';
+import { EmpDetailComponent } from './Components/emp-detail/emp-detail.component';
+import { MasterComponent } from './Components/master/master.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SecondComponent,
     EmpComponent,
-    CalcComponent
+    CalcComponent,
+    EmpDetailComponent,
+    MasterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent, SecondComponent]
+  bootstrap: [MasterComponent]
 })
 export class AppModule { }

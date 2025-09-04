@@ -1,0 +1,15 @@
+<div class="card">
+    <img class="card-img-top" [src]="updatedEmp.empImg"/>
+    <div class="card-body">
+        <h3 class="card-title text-center text-info">Details of {{updatedEmp.empName}}</h3>
+        <hr>        
+        <input class="form-control" placeholder="EmpId" [(ngModel)]="updatedEmp.empId"/>
+        <input class="form-control" [(ngModel)]="updatedEmp.empName" placeholder="Emp Name"/>
+        <input class="form-control" placeholder="Emp Address" [(ngModel)]="updatedEmp.empAddress"/>
+        <input class="form-control" placeholder="Emp Salary" [(ngModel)]="updatedEmp.empSalary"/>
+        <p>
+            <a href="#" class="btn btn-primary m-2" (click)="onUpdate()">Update</a>
+            <a href="#" class="btn btn-secondary m-2">Cancel</a>
+        </p>
+    </div>
+</div>
