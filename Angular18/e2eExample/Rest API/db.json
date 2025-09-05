@@ -1,0 +1,9 @@
+{
+    "contacts": [
+        {"id" : 1, "phoneNo" : 9945205684, "name" : "Phaniraj", "photo" : "Phani.png"},
+        {"id" : 2, "phoneNo" : 9449184401, "name" : "Ramesh", "photo" : "pic1.png"},
+        {"id" : 3, "phoneNo" : 9845208765, "name" : "Tony", "photo" : "pic2.png"},
+        {"id" : 4, "phoneNo" : 9845056123, "name" : "Scott", "photo" : "pic3.png"},
+        {"id" : 5, "phoneNo" : 9900456879, "name" : "James", "photo" : "pic4.png"}
+    ]
+}

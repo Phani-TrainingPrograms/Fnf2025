@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" *ngFor="let rec of contactList">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{rec.name}}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img [src]="rec.photo" class="card-img"/>
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control my-2" [value]="rec.id">
+                            <input type="text" class="form-control my-2" [value]="rec.name">
+                            <input type="text"[value]="rec.phoneNo" class="form-control my-2">
+                        </div>
+                        <div class="col-sm-2">
+                            <ul class="navbar">
+                                <li class="nav-item">
+                                    <a class="btn btn-primary btn-sm my-2" [routerLink]= "['/contacts/view', rec.id]">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-info btn-sm my-2" [routerLink]= "['/contacts/edit', rec.id]">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-danger btn-sm my-2">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
