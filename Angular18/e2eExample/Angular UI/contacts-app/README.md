@@ -1,59 +1,80 @@
-# ContactsApp
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
-
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
+# Readme
+1. Create the Rest API for UR Application. It could be either json-server from Nodejs or a new Web API developed using .NET 8.0.  
+2. Create the new Angular App
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+ng new appname
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+3. Create the required Components, interfaces and services. Create Services for DI feature of Angular.
 ```
+ng g c Components/ComponentName --skip-tests
+ng g i Models/ModelName
+ng g s Services/ServiceName --skip-tests
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+4. Create the Model implementation in the ModelFile.
+5. Implement the Service as per your business requirement. If you are connecting to a REST Endpoint, U shall inject HttpClient into the Service. For using HttpClient, U must include provideHttpClient Provider in the Module.ts in providers section. For REST Endpoints, UR Functions should return Observables for handling async programming.  
 ```
+//////////module.ts/////////////////////
+providers: [
+    provideHttpClient()
+  ]
 
-## Running end-to-end tests
+///////////////////Service.ts////////////////////////////////////
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
-For end-to-end (e2e) testing, run:
+export class ContactService {
 
-```bash
-ng e2e
+  url : string = "http://localhost:3000/contacts";//UR URL ENDPOINT
+  constructor(private httpClient : HttpClient) //DI for HttpClient
+  { 
+
+  }  
+  //Rest of UR Code for accessing the Endpoints. 
+``` 
+6. Implement your respective Component structures.
+    - Implement the data logic in the ts. file
+    - Implement the UI in the .html file. 
+    . Add any specific styles for this component in the .css file.
+    - Use DI for injecting the service into the Component
+
 ```
+export class ContactListComponent implements OnInit {
+  contactList : any = [];
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+  constructor(private service : ContactService) {
+    
+  }
+  ngOnInit(): void {
+    let observable = this.service.getAllContacts();
+    observable.subscribe((data : Contact[]) =>{
+      this.contactList = data;
+    })
+  }
+  //Additional code if required...   
+}
 
-## Additional Resources
+```
+9. Add any additional 3rd party libraries like bootstrap into the application and add its refereces at appropriate locations in the angular.json file. 
+```
+npm install bootstap//In the CLI terminal.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+////////In angular.json/////
+ "assets": [
+              {
+                "glob": "**/*",
+                "input": "public/images"
+              }
+            ],
+    "styles": [
+              "src/styles.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+    "scripts": []
+```
+10. Test the Application by running the CLI Command
+```
+ng serve --open
+```
