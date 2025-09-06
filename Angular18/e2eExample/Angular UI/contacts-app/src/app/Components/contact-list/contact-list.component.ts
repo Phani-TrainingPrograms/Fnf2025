@@ -10,7 +10,7 @@ import { ContactService } from '../../Services/contact.service';
 })
 export class ContactListComponent implements OnInit {
   contactList : any = [];
-
+  searchCriteria : string = ""
   constructor(private service : ContactService) {
     
   }

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EventManagerPlugin } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { Contact } from '../Models/contact';
 
@@ -19,7 +18,22 @@ export class ContactService {
   } 
   
   public getContact(id : string) : Observable<Contact>{
-    const temp : string = `${this.url}/${id}` 
+    const temp : string = `${this.url}/${id}`
     return this.httpClient.get<Contact>(temp)
   }
+
+  public addContact(contact : Contact): Observable<Contact>{
+    return this.httpClient.post(this.url, contact) as Observable<Contact>;
+  }
+  
+  public updateContact(contact : any) : Observable<any>{
+    debugger;
+     const temp : string = `${this.url}/${contact.id}`
+    return this.httpClient.put(temp, contact); 
+  }
+  public deleteContact(id : string) : Observable<Contact>{
+     const temp : string = `${this.url}/${id}`
+     return this.httpClient.delete(temp) as Observable<Contact>; 
+  }
 }
+

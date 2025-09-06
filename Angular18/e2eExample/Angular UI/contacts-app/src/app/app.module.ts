@@ -10,6 +10,8 @@ import { ContactListComponent } from './Components/contact-list/contact-list.com
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { provideHttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ContactFilterPipe } from './Pipes/contact-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { provideHttpClient } from '@angular/common/http';
     EditContactComponent,
     ContactListComponent,
     ErrorPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContactFilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideHttpClient()

@@ -1,1 +1,30 @@
-<p>new-contact works!</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="h1">
+                <h1>Add New Contact</h1>
+                <hr>
+            </div>
+            <section>
+                <input class="form-control my-2" [(ngModel)]="newContact.id"/>
+                <input class="form-control my-2" [(ngModel)]="newContact.name"/>
+                <input class="form-control my-2" [(ngModel)]="newContact.phoneNo"/>
+                <input class="form-control my-2" [(ngModel)]="newContact.photo"/>
+            </section>
+            <div>
+                <button class="btn btn-success mx-2" (click)="onSubmit()">
+                    <i class="fa fa-save" aria-hidden="true"></i>
+                    Save
+                </button>
+                <button class="btn btn-secondary mx-2" routerLink="/">
+                    <i class="fa fa-backward" aria-hidden="true"></i>
+                    Back
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
