@@ -1,0 +1,24 @@
+﻿@using BlazorApp.Shared
+
+@if(SelectedProduct != null)
+{
+    <div class="card">
+        <div class="card-header">
+            Product Details
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@SelectedProduct.Name</h5>
+            <p class="card-text">ID: @SelectedProduct.Id</p>
+            <p class="card-text">Price: @SelectedProduct.Price.ToString("C")</p>
+        </div>
+    </div>
+}
+else
+{
+    <p>No product selected.</p>
+}
+
+
+@code {
+    [Parameter]public Product SelectedProduct { get; set; }
+}

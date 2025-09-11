@@ -1,0 +1,38 @@
+﻿@using BlazorApp.Shared
+<h3>ProductsList</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="() => onShow(product)">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+</table>
+<Product_detail SelectedProduct="selectedProduct"/>
+@code {
+    private List<Product> products = new List<Product>
+    {
+        new Product { Id = 1, Name = "Laptop", Price = 999.99m },
+        new Product { Id = 2, Name = "Smartphone", Price = 499.99m },
+        new Product { Id = 3, Name = "Tablet", Price = 299.99m }
+    };
+    private Product selectedProduct = null;
+    private void onShow(Product p)
+    {
+        selectedProduct = p;
+    }
+}

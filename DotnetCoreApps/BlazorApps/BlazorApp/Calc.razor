@@ -1,0 +1,48 @@
+﻿
+<h3>Calc</h3>
+<div>
+    <input type="number" @bind="firstValue" placeholder="First Value" />
+    <select @bind="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" @bind="secondValue" placeholder="Second Value" />
+    <button @onclick="Calculate">Calculate</button>
+    <span>@result</span>
+</div>
+@code {
+    private double firstValue;
+    private double secondValue;
+    private string operation = "+";
+    private string result = string.Empty;
+
+    private void Calculate()
+    {
+        try
+        {
+            result = operation switch
+            {
+                "+" => (firstValue + secondValue).ToString(),
+                "-" => (firstValue - secondValue).ToString(),
+                "*" => (firstValue * secondValue).ToString(),
+                "/" when secondValue != 0 => (firstValue / secondValue).ToString(),
+                "/" when secondValue == 0 => throw new DivideByZeroException(),
+                _ => throw new InvalidOperationException("Unsupported operation")
+            };
+        }
+        catch (DivideByZeroException)
+        {
+            result = "Error: Division by zero";
+        }
+        catch(InvalidOperationException ex)
+        {
+            result = $"Error: {ex.Message}";
+        }
+        catch (Exception)
+        {
+            result = "Error: An unexpected error occurred";
+        }
+    }
+}
